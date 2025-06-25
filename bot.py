@@ -26,7 +26,7 @@ async def m3u_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     m3u_url = context.args[0]
     match = re.match(r"(https?://[^/]+)/get\.php\?username=([^&]+)&password=([^&]+)", m3u_url)
     if not match:
-        await update.message.reply_text('Enlace inv¨¢lido')
+        await update.message.reply_text('Enlace invÂ¨Â¢lido')
         return
 
     base_url, username, password = match.groups()
@@ -44,21 +44,21 @@ async def m3u_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     categorias_series = len(data.get('series_categories', []))
 
     resp_text = (
-        f"”9å3 *Panel:* {panel}\n"
-        f"”9Ó4 *Usuario:* {username}\n"
-        f"”9ä7 *Contrase0Š9a:* {password}\n"
-        f"”9â0 *Estado:* {estado}\n"
-        f"”9æ4 *Conexiones:* {conexiones}\n"
-        f"77 *Expiraci¨®n:* {expiracion}\n"
-        f"”9±1 *Zona:* {zona}\n"
-        f"”9Ú6 *Mensaje:* {mensaje}\n"
-        f"”9â4 *Live:* {categorias_live} | ”9Á0 *VOD:* {categorias_vod} | ”9ß2 *Series:* {categorias_series}\n"
-        f"”9Ý0 *M3U Plus:* {m3u_url}\n"
-        f"”9å3 *API:* {base_url}/player_api.php?username={username}&password={password}"
+        f"â€9Ã¥3 *Panel:* {panel}\n"
+        f"â€9Ã“4 *Usuario:* {username}\n"
+        f"â€9Ã¤7 *ContraseÂ0Å 9a:* {password}\n"
+        f"â€9Ã¢0 *Estado:* {estado}\n"
+        f"â€9Ã¦4 *Conexiones:* {conexiones}\n"
+        f"Â7Â7 *ExpiraciÂ¨Â®n:* {expiracion}\n"
+        f"â€9Â±1 *Zona:* {zona}\n"
+        f"â€9Ãš6 *Mensaje:* {mensaje}\n"
+        f"â€9Ã¢4 *Live:* {categorias_live} | â€9Ã0 *VOD:* {categorias_vod} | â€9ÃŸ2 *Series:* {categorias_series}\n"
+        f"â€9Ã0 *M3U Plus:* {m3u_url}\n"
+        f"â€9Ã¥3 *API:* {base_url}/player_api.php?username={username}&password={password}"
     )
     await update.message.reply_text(resp_text, parse_mode='Markdown', disable_web_page_preview=True)
 
-# A0Š9adir handler
+# AÂ0Å 9adir handler
 app.add_handler(CommandHandler('m3u', m3u_command))
 
 # Flask app para el webhook
